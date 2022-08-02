@@ -1,4 +1,4 @@
-# Laravel CMS using Balde Views
+# Laravel CMS using Blade Views
 
 This repository is copy of the simple [PHP/Laravel CMS](https://github.com/codeadamca/php-cms-laravel) except the CMS views have been converted from vanilla PHP to Blade.
 
@@ -20,8 +20,8 @@ All user acocunts will have the default password of "password".
 
 ## Tutorial Requirements:
 
-* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
-* [Laravel](https://laravel.com/)
+-   [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
+-   [Laravel](https://laravel.com/)
 
 Full tutorial URL: https://codeadam.ca/learning/php-cms-laravel.html
 
