@@ -20,8 +20,8 @@ All user acocunts will have the default password of "password".
 
 ## Tutorial Requirements:
 
--   [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
--   [Laravel](https://laravel.com/)
+* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
+* [Laravel](https://laravel.com/)
 
 Full tutorial URL: https://codeadam.ca/learning/php-cms-laravel.html
 

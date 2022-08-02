@@ -5,6 +5,9 @@ use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\SkillsController;
+use App\Http\Controllers\EducationController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +34,7 @@ Route::get('/project/{project:slug}', function (Project $project) {
 })->where('project', '[A-z\-]+');
 
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
-Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest');
+Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest')->name('login');
 Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('guest');
 Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
 
@@ -57,3 +60,19 @@ Route::post('/console/types/add', [TypesController::class, 'add'])->middleware('
 Route::get('/console/types/edit/{type:id}', [TypesController::class, 'editForm'])->where('type', '[0-9]+')->middleware('auth');
 Route::post('/console/types/edit/{type:id}', [TypesController::class, 'edit'])->where('type', '[0-9]+')->middleware('auth');
 Route::get('/console/types/delete/{type:id}', [TypesController::class, 'delete'])->where('type', '[0-9]+')->middleware('auth');
+
+Route::get('/console/education/list', [EducationController::class, 'list'])->middleware('auth');
+Route::get('/console/education/add', [EducationController::class, 'addForm'])->middleware('auth');
+Route::post('/console/education/add', [EducationController::class, 'add'])->middleware('auth');
+Route::get('/console/education/edit/{education:id}', [EducationController::class, 'editForm'])->where('education', '[0-9]+')->middleware('auth');
+Route::post('/console/education/edit/{education:id}', [EducationController::class, 'edit'])->where('education', '[0-9]+')->middleware('auth');
+Route::get('/console/education/delete/{education:id}', [EducationController::class, 'delete'])->where('education', '[0-9]+')->middleware('auth');
+
+Route::get('/console/skills/list', [SkillsController::class, 'list'])->middleware('auth');
+Route::get('/console/skills/add', [SkillsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/skills/add', [SkillsController::class, 'add'])->middleware('auth');
+Route::get('/console/skills/edit/{skill:id}', [SkillsController::class, 'editForm'])->where('project', '[0-9]+')->middleware('auth');
+Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit'])->where('project', '[0-9]+')->middleware('auth');
+Route::get('/console/skills/delete/{skill:id}', [SkillsController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
+Route::get('/console/skills/image/{skill:id}', [SkillsController::class, 'imageForm'])->where('project', '[0-9]+')->middleware('auth');
+Route::post('/console/skills/image/{skill:id}', [SkillsController::class, 'image'])->where('project', '[0-9]+')->middleware('auth');

@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Type;
 use App\Models\Project;
 use Illuminate\Database\Seeder;
+use App\Models\Skill;
+use App\Models\Education;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,10 +22,14 @@ class DatabaseSeeder extends Seeder
         User::truncate();
         Type::truncate();
         Project::truncate();
+        Skill::truncate();
+        Education::truncate();
         
         User::factory()->count(2)->create();
         Type::factory()->count(3)->create();
         Project::factory()->count(4)->create();
+        Skill::factory()->count(2)->create();
+        Education::factory()->count(3)->create();
             
     }
 }
