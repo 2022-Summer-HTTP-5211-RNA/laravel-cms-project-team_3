@@ -7,6 +7,7 @@ use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\EmploymentController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -76,3 +77,10 @@ Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit']
 Route::get('/console/skills/delete/{skill:id}', [SkillsController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
 Route::get('/console/skills/image/{skill:id}', [SkillsController::class, 'imageForm'])->where('project', '[0-9]+')->middleware('auth');
 Route::post('/console/skills/image/{skill:id}', [SkillsController::class, 'image'])->where('project', '[0-9]+')->middleware('auth');
+
+Route::get('/console/employment/list', [EmploymentController::class, 'list'])->middleware('auth');
+Route::get('/console/employment/add', [EmploymentController::class, 'addForm'])->middleware('auth');
+Route::post('/console/employment/add', [EmploymentController::class, 'add'])->middleware('auth');
+Route::get('/console/employment/edit/{employment:id}', [EmploymentController::class, 'editform'])->where('employment', '[0-9]+')->middleware('auth');
+Route::post('/console/employment/edit/{employment:id}', [EmploymentController::class, 'edit'])->where('employment', '[0-9]+')->middleware('auth');
+Route::get('/console/employment/delete/{employment:id}', [EmploymentController::class, 'delete'])->where('employment', '[0-9]+')->middleware('auth');

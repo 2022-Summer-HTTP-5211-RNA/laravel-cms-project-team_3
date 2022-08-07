@@ -10,6 +10,7 @@
         <li><a href="/console/users/list">Manage Users</a></li>
         <li><a href="/console/skills/list">Manage Skills</a></li>
         <li><a href="/console/education/list">Manage Educations</a></li>
+        <li><a href="/console/employment/list">Manage Employments</a></li>
         <li><a href="/console/logout">Log Out</a></li>
     </ul>
 
