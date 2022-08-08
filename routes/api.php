@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Education;
+use App\Models\Skill;
+use App\Models\Employment;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +62,27 @@ Route::get('/projects/profile/{project?}', function(Project $project){
     }
 
     return $project;
+
+});
+
+Route::get('/education', function(){
+
+    $education = Education::orderBy('id')->get();
+    return $education;
+
+});
+
+Route::get('/skill', function(){
+
+    $skill = Skill::orderBy('id')->get();
+    return $skill;
+
+});
+
+Route::get('/employment', function(){
+
+    $employment = Employment::orderBy('id')->get();
+    return $employment;
 
 });
 
