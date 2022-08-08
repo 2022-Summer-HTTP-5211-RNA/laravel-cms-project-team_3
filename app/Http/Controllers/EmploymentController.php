@@ -33,7 +33,7 @@ class EmploymentController extends Controller
         ]);
 
         $employment = new Employment();
-        $employment->companyName = $attributes['title'];
+        $employment->companyName = $attributes['companyName'];
         $employment->title = $attributes['title'];
         $employment->description = $attributes['description'];
         $employment->startDate = $attributes['startDate'];
