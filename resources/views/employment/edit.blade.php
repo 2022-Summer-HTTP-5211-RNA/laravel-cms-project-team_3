@@ -29,12 +29,12 @@
             @endif
         </div>
         <div class="w3-margin-bottom">
-            <label for="decription">Description:</label>
-            <textarea name="decription" id="decription" required>{{old('decription', $employment->decription)}}</textarea>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" required>{{old('description', $employment->description)}}</textarea>
 
-            @if ($errors->first('decription'))
+            @if ($errors->first('description'))
                 <br>
-                <span class="w3-text-red">{{$errors->first('decription')}}</span>
+                <span class="w3-text-red">{{$errors->first('description')}}</span>
             @endif
         </div>
         <div class="w3-margin-bottom">
