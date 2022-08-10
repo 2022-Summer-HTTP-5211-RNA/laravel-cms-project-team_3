@@ -8,6 +8,10 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EmploymentController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\SocialMediaController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -84,3 +88,20 @@ Route::post('/console/employment/add', [EmploymentController::class, 'add'])->mi
 Route::get('/console/employment/edit/{employment:id}', [EmploymentController::class, 'editform'])->where('employment', '[0-9]+')->middleware('auth');
 Route::post('/console/employment/edit/{employment:id}', [EmploymentController::class, 'edit'])->where('employment', '[0-9]+')->middleware('auth');
 Route::get('/console/employment/delete/{employment:id}', [EmploymentController::class, 'delete'])->where('employment', '[0-9]+')->middleware('auth');
+
+Route::get('/console/media/list', [SocialMediaController::class, 'list'])->middleware('auth');
+Route::get('/console/media/add', [SocialMediaController::class, 'addForm'])->middleware('auth');
+Route::post('/console/media/add', [SocialMediaController::class, 'add'])->middleware('auth');
+Route::get('/console/media/edit/{media:id}', [SocialMediaController::class, 'editForm'])->where('project', '[0-9]+')->middleware('auth');
+Route::post('/console/media/edit/{media:id}', [SocialMediaController::class, 'edit'])->where('project', '[0-9]+')->middleware('auth');
+Route::get('/console/media/delete/{media:id}', [SocialMediaController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
+
+Route::get('/console/contact/list', [ContactController::class, 'list'])->middleware('auth');
+Route::get('/console/contact/add', [ContactController::class, 'addForm'])->middleware('auth');
+Route::post('/console/contact/add', [ContactController::class, 'add'])->middleware('auth');
+Route::get('/console/contact/edit/{contact:id}', [ContactController::class, 'editForm'])->where('project', '[0-9]+')->middleware('auth');
+Route::post('/console/contact/edit/{contact:id}', [ContactController::class, 'edit'])->where('project', '[0-9]+')->middleware('auth');
+Route::get('/console/contact/delete/{contact:id}', [ContactController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
+
+
+Route::get('/console/contact-us/list', [ContactUsController::class, 'list'])->middleware('auth');

@@ -9,6 +9,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Skill;
 use App\Models\Education;
 use App\Models\Employment;
+use App\Models\Contact;
+use App\Models\SocialMedia;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +28,8 @@ class DatabaseSeeder extends Seeder
         Skill::truncate();
         Education::truncate();
         Employment::truncate();
+  	    Contact::truncate();
+        SocialMedia::truncate();
         
         User::factory()->count(2)->create();
         Type::factory()->count(3)->create();
@@ -33,6 +37,8 @@ class DatabaseSeeder extends Seeder
         Skill::factory()->count(2)->create();
         Education::factory()->count(3)->create();
         Employment::factory()->count(3)->create();
+        Contact::factory()->count(3)->create();
+ 	    SocialMedia::factory()->count(3)->create();
             
     }
 }
