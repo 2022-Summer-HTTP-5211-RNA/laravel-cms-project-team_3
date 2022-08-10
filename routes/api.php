@@ -9,6 +9,8 @@ use App\Models\Project;
 use App\Models\Education;
 use App\Models\Skill;
 use App\Models\Employment;
+use App\Models\Contact;
+use App\Models\SocialMedia;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,6 +85,20 @@ Route::get('/employment', function(){
 
     $employment = Employment::orderBy('id')->get();
     return $employment;
+
+});
+
+Route::get('/contact', function(){
+
+    $contact = Contact::orderBy('id')->get();
+    return $contact;
+
+});
+
+Route::get('/socialmedia', function(){
+
+    $socialmedia = SocialMedia::orderBy('id')->get();
+    return $socialmedia;
 
 });
 
